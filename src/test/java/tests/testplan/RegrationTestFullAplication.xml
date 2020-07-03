@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="REGRESSION" verbose="1" configfailurepolicy="continue">
+    <listeners>
+
+
+        <listener class-name="listeners.ScreenshotListener" />
+        <listener class-name="listeners.ExtentReportListener" />
+        <listener class-name="listeners.MetricsListener" />
+    </listeners>
+
+
+    <test name="Regression" >
+        <classes>
+
+<!--         <class name="tests.UiAutomationTrainingBasicTest"></class>-->
+
+
+        </classes>
+    </test>
+
+
+</suite>
