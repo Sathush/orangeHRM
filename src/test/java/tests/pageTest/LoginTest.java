@@ -21,11 +21,11 @@ public class LoginTest extends TestBase {
     @Test(dataProviderClass = LoginData.class,dataProvider = "LoginExcel")
     public void testlogin(String username, String password) {
         softAssert = new SoftAssert();
-       // softAssert.assertTrue(LoginPage.isLoginPannelDisplayed(), "LoginPannel is not Displayed");
+        softAssert.assertTrue(LoginPage.isLoginPannelDisplayed(), "LoginPannel is not Displayed");
         LoginPage.setUserName(username);
         LoginPage.setPassword(password);
         LoginPage.clickSubmit();
-       // softAssert.assertTrue(LoginPage.isDashboardDisplayed(),"Dashboard Page is not displayed");
+        softAssert.assertTrue(LoginPage.isDashboardDisplayed(),"Dashboard Page is not displayed");
         softAssert.assertAll();
 
         LOGGER.info("successful Login");

@@ -3,7 +3,6 @@ package classpack;
 import controllers.MethodBase;
 import controllers.PageBase;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 
 public class LoginPage extends PageBase {
     private static final Logger LOGGER = Logger.getLogger(LoginPage.class);
@@ -14,8 +13,8 @@ public class LoginPage extends PageBase {
 //    private static By btnLogin = By.id("btnLogin");
 //    private static By Dashboerd = By.xpath("//*[@id=\"menu_dashboard_index\"]/b");
 
-    public static void isLoginPannelDisplayed() {
-        MethodBase.isDisplayed_ByXpath("//*[@id=\"frmLogin\"]");
+    public static boolean isLoginPannelDisplayed() {
+        return MethodBase.isDisplayed_ByXpath("//*[@id=\"frmLogin\"]");
     }
 
     public static void setUserName(String username) {
@@ -30,8 +29,9 @@ public class LoginPage extends PageBase {
         MethodBase.clickButton_ByXpath("//*[@id=\"btnLogin\"]");
     }
 
-    public static void isDashboardDisplayed() {
-        MethodBase.isDisplayed_ByXpath("//*[@id=\"menu_dashboard_index\"]/b");
+    public static boolean isDashboardDisplayed() {
+      return  MethodBase.isDisplayed_ByXpath("//*[@id=\"menu_dashboard_index\"]/b");
+
     }
 
 
