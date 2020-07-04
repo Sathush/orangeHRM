@@ -49,15 +49,15 @@ public class JobTittle extends PageBase {
     }
 
     public static void setJobTittle(String tittle) {
-        MethodBase.setText_ByXpath("//*[@id=\"jobTitle_jobTitle\"]","adgfhgj");
+        MethodBase.setText_ByXpath("//*[@id=\"jobTitle_jobTitle\"]",tittle);
     }
     public static void setJobTittleDescription(String Description) {
-        MethodBase.setText_ByXpath("//*[@id=\"jobTitle_jobDescription\"]", "syfhkljhcgkvbn");
+        MethodBase.setText_ByXpath("//*[@id=\"jobTitle_jobDescription\"]", Description);
     }
 
     public static void setJobTitle_note(String Note) {
 
-        MethodBase.setText_ByXpath("//*[@id=\"jobTitle_note\"]", "safgsdbsfbbfj");
+        MethodBase.setText_ByXpath("//*[@id=\"jobTitle_note\"]", Note);
     }
     public static void clickSave() {
         MethodBase.clickButton_ByXpath("//*[@id=\"btnSave\"]");

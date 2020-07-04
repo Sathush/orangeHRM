@@ -17,7 +17,7 @@ public class JobTitttleTest extends TestBase {
     @Test(dataProviderClass = JobTittleData.class,dataProvider = "JobTittleExcel")
     public void testJobTittle(String jobTittle, String jobDescription, String jobNote) {
         softAssert = new SoftAssert();
-       // softAssert.assertTrue(LoginPage.isDashboardDisplayed(), "LoginPannel is not Displayed");
+       // softAssert.assertTrue(LoginPage.isDashboardDisplayed(), "Dashboard is not Displayed");
         JobTittle.clickAdmin();
         JobTittle.clickJob();
         JobTittle.clickJobTittle();
