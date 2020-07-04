@@ -1,63 +1,66 @@
 package pageObjects.shop;
 
+import controllers.MethodBase;
 import controllers.PageBase;
 import org.openqa.selenium.By;
 
 public class JobTittle extends PageBase {
+//
+//    private static By Dashboerd  = By.xpath("//*[@id=\"menu_dashboard_index\"]/b");
+//    private static By btnAdmin  = By.id("menu_admin_viewAdminModule");
+//    private static By btnJob =By.id("menu_admin_Job");
+//    private static By btnJobTittle=By.id( "menu_admin_viewJobTitleList");
+//    private static By JobTittlesPannel  = By.xpath("//*[@id=\"search-results\"]/div[1]/h1");
+//    private static By btnAdd = By.id("btnAdd");
+//    private static By AddJobTittlePannel  = By.id("saveHobTitleHeading");
+//    private static By txtJobTittle  = By.id("jobTitle_jmenu_admin_viewAdminModuleobTitle");
+//    private static By jobTitle_Discription  = By.id("jobTitle_jobDescription");
+//    private static By jobTitle_note  = By.id("jobTitle_note");
+//
+//    private static By btnSave  = By.id("btnSave");
 
-    private static By Dashboerd  = By.xpath("//*[@id=\"menu_dashboard_index\"]/b");
-    private static By btnAdmin  = By.id("menu_admin_viewAdminModule");
-    private static By btnJob =By.id("menu_admin_Job");
-    private static By btnJobTittle=By.id( "menu_admin_viewJobTitleList");
-    private static By JobTittlesPannel  = By.xpath("//*[@id=\"search-results\"]/div[1]/h1");
-    private static By btnAdd = By.id("btnAdd");
-    private static By AddJobTittlePannel  = By.id("saveHobTitleHeading");
-    private static By txtJobTittle  = By.id("jobTitle_jobTitle");
-    private static By jobTitle_Discription  = By.id("jobTitle_jobDescription");
-    private static By jobTitle_note  = By.id("jobTitle_note");
 
-    private static By btnSave  = By.id("btnSave");
-
-
-    public static boolean isDashboardDisplayed() {
-        return getDriver().findElement(Dashboerd).isDisplayed();
+    public void  isDashboardDisplayed() {
+        MethodBase.isDisplayed_ByXpath("//*[@id=\\\"menu_dashboard_index\\\"]/b");
     }
 
     public static void clickAdmin() {
-        getDriver().findElement(btnAdmin).click();
+        MethodBase.clickButton_ByXpath("//*[@id=\"menu_admin_viewAdminModule\"]");
     }
     public static void clickJob() {
-        getDriver().findElement(btnJob).click();
+    MethodBase.clickButton_ByXpath("//*[@id=\"menu_admin_Job\"]");
+
     }
 
     public static void clickJobTittle() {
-        getDriver().findElement(btnJobTittle).click();
+
+       MethodBase.clickButton_ByXpath("//*[@id=\"menu_admin_viewJobTitleList\"]");
     }
 
-    public static boolean isJobTittlePannelDisplayed() {
-        return getDriver().findElement(JobTittlesPannel).isDisplayed();
+    public static void isJobTittlePannelDisplayed() {
+        MethodBase.isDisplayed_ByXpath("//*[@id=\"search-results\"]/div[1]/h1");
     }
 
     public static void clickAddJob() {
-
-        getDriver().findElement(btnAdd).click();
+    MethodBase.clickButton_ByXpath("//*[@id=\"btnAdd\"]");
     }
-    public static boolean isAddJobTittlePannelDisplayed() {
-        return getDriver().findElement(AddJobTittlePannel).isDisplayed();
+    public static void isAddJobTittlePannelDisplayed() {
+        MethodBase.isDisplayed_ByXpath("//*[@id=\"saveHobTitleHeading\"]");
     }
 
     public static void setJobTittle(String tittle) {
-        getDriver().findElement(txtJobTittle).sendKeys(tittle);
+        MethodBase.setText_ByXpath("//*[@id=\"jobTitle_jobTitle\"]","adgfhgj");
     }
     public static void setJobTittleDescription(String Description) {
-        getDriver().findElement(jobTitle_Discription).sendKeys(Description);
+        MethodBase.setText_ByXpath("//*[@id=\"jobTitle_jobDescription\"]", "syfhkljhcgkvbn");
     }
 
     public static void setJobTitle_note(String Note) {
-        getDriver().findElement(jobTitle_note).sendKeys(Note);
+
+        MethodBase.setText_ByXpath("//*[@id=\"jobTitle_note\"]", "safgsdbsfbbfj");
     }
     public static void clickSave() {
-        getDriver().findElement(btnSave).click();
+        MethodBase.clickButton_ByXpath("//*[@id=\"btnSave\"]");
     }
 }
 

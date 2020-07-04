@@ -37,6 +37,10 @@ public class TestBase {
         }
         LOGGER.info("Browser Initiated");
 
+        LoginPage.isLoginPannelDisplayed();
+        LoginPage.setUserName("Admin");
+        LoginPage.setPassword("admin123");
+        LoginPage.clickSubmit();
 
 
 
