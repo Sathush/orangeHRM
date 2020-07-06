@@ -37,8 +37,8 @@ public class JobTittle extends PageBase {
        MethodBase.clickButton_ByXpath("//*[@id=\"menu_admin_viewJobTitleList\"]");
     }
 
-    public static void isJobTittlePannelDisplayed() {
-        MethodBase.isDisplayed_ByXpath("//*[@id=\"search-results\"]/div[1]/h1");
+    public static boolean isJobTittlePannelDisplayed() {
+     return   MethodBase.isDisplayed_ByXpath("//*[@id=\"search-results\"]/div[1]/h1");
     }
 
     public static void clickAddJob() {

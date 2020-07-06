@@ -14,9 +14,6 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.util.logging.Logger;
 
-
-
-
 public class TestBase {
     public SoftAssert softAssert;
 

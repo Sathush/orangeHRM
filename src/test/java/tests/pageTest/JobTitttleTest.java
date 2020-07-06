@@ -1,5 +1,6 @@
 package tests.pageTest;
 
+import controllers.MethodBase;
 import controllers.TestBase;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
@@ -15,7 +16,7 @@ public class JobTitttleTest extends TestBase {
     private static final Logger LOGGER = Logger.getLogger(LoginTest.class);
 
     @Test(dataProviderClass = JobTittleData.class,dataProvider = "JobTittleExcel")
-    public void testJobTittle(String jobTittle, String jobDescription, String jobNote) {
+    public void testJobTittle(String jobTittle, String jobDescription, String jobNote, String status, String alert ) {
         softAssert = new SoftAssert();
         softAssert.assertTrue(LoginPage.isDashboardDisplayed(), "Dashboard is not Displayed");
         JobTittle.clickAdmin();
@@ -28,6 +29,13 @@ public class JobTitttleTest extends TestBase {
         JobTittle.setJobTittleDescription(jobDescription);
         JobTittle.setJobTitle_note(jobNote);
         JobTittle.clickSave();
+
+        if (status.equals("valid")){
+        softAssert.assertTrue(JobTittle.isJobTittlePannelDisplayed(),"Not succesfully save the job tittle");
+        }else
+        {
+            softAssert.assertEquals(MethodBase.get_Text("//span[@for]"),alert,"message not show");
+        }
         softAssert.assertTrue(LoginPage.isDashboardDisplayed(),"Dashboard Page is not displayed");
         softAssert.assertAll();
 
