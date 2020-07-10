@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageObjects.shop.EmploymentStatus;
 import testData.EmploymentStatusData;
-import testData.JobTittleData;
 
 public class EmploymentStatusTest extends TestBase {
     public SoftAssert softAssert;

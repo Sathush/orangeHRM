@@ -1,19 +1,18 @@
 package tests.pageTest;
 
-import classpack.LoginPage;
 import controllers.TestBase;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageObjects.shop.PayGrades;
-import testData.JobTittleData;
+import testData.DataProviderClass;
 
 public class PyGradesTest extends TestBase {
     public SoftAssert softAssert;
 
     private static final Logger LOGGER = Logger.getLogger(LoginTest.class);
 
-    @Test(dataProviderClass = JobTittleData.class,dataProvider = "JobTittleExcel")
+    @Test(dataProviderClass = DataProviderClass.class,dataProvider = "JobTittleExcel")
     public void testJobTittle(String Name, String jobDescription, String jobNote) {
         softAssert = new SoftAssert();
         softAssert.assertTrue(PayGrades.isDashboardDisplay(), "Dashboard is not Displayed");

@@ -6,23 +6,18 @@ import org.apache.log4j.Logger;
 
 public class LoginPage extends PageBase {
     private static final Logger LOGGER = Logger.getLogger(LoginPage.class);
-//
-//    private static By loginPannel = By.id("logInPanelHeading");
-//    private static By Username = By.id("txtUsername");
-//    private static By Password = By.id("txtPassword");
-//    private static By btnLogin = By.id("btnLogin");
-//    private static By Dashboerd = By.xpath("//*[@id=\"menu_dashboard_index\"]/b");
+
 
     public static boolean isLoginPannelDisplayed() {
         return MethodBase.isDisplayed_ByXpath("//*[@id=\"frmLogin\"]");
     }
 
     public static void setUserName(String username) {
-        MethodBase.setText_ByXpath("//*[@id=\"txtUsername\"]", "Admin");
+        MethodBase.setText_ByID("txtUsername", "Admin");
     }
 
     public static void setPassword(String password) {
-        MethodBase.setText_ByXpath("//*[@id=\"txtPassword\"]", "admin123");
+        MethodBase.setText_ByID("txtPassword", "admin123");
     }
 
     public static void clickSubmit() {

@@ -7,18 +7,17 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageObjects.shop.JobTittle;
 import classpack.LoginPage;
-import testData.JobTittleData;
-import testData.LoginData;
+import testData.DataProviderClass;
 
 public class JobTitttleTest extends TestBase {
     public SoftAssert softAssert;
 
     private static final Logger LOGGER = Logger.getLogger(LoginTest.class);
 
-    @Test(dataProviderClass = JobTittleData.class,dataProvider = "JobTittleExcel")
+    @Test(dataProviderClass = DataProviderClass.class,dataProvider = "JobTittleExcel")
     public void testJobTittle(String jobTittle, String jobDescription, String jobNote, String status, String alert ) {
         softAssert = new SoftAssert();
-        softAssert.assertTrue(LoginPage.isDashboardDisplayed(), "Dashboard is not Displayed");
+        softAssert.assertTrue(JobTittle.isJobTittlePannelDisplayed(), "Dashboard is not Displayed");
         JobTittle.clickAdmin();
         JobTittle.clickJob();
         JobTittle.clickJobTittle();
@@ -30,7 +29,7 @@ public class JobTitttleTest extends TestBase {
         JobTittle.setJobTitle_note(jobNote);
         JobTittle.clickSave();
 
-        if (status.equals("valid")){
+     if (status.equals("valid")){
         softAssert.assertTrue(JobTittle.isJobTittlePannelDisplayed(),"Not succesfully save the job tittle");
         }else
         {
